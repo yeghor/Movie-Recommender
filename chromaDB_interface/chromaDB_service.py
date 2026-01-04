@@ -1,7 +1,11 @@
-from . import filepaths
-# import filepaths
+import os
 import chromadb
 import uuid
+
+
+COLLECTION_NAME = "movies_collection"
+
+chroma_database_path = os.path.join("chromaDB_vec_db")
 
 class ChromaDBService:
     @staticmethod
@@ -30,8 +34,8 @@ class ChromaDBService:
         return len(meta) == len(docs)
 
     def __init__(self):
-        self.__client = chromadb.PersistentClient(path=filepaths.chroma_data_base_path)
-        self.__collection = self.__client.get_collection(name=filepaths.COLLECTION_NAME)
+        self.__client = chromadb.PersistentClient(path=chroma_database_path)
+        self.__collection = self.__client.get_collection(name=COLLECTION_NAME)
 
     def query(self, query_texts: str, genres: str, n_results: int = 3, contain: str = " "):
         
