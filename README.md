@@ -1,4 +1,9 @@
 # **Overview of Film Recomendator Django App**
+
+
+https://github.com/user-attachments/assets/128d3b54-10e6-41ce-863c-cd5a004ccd00
+
+
 A web application built with Django that provides movie suggestions based on natural language prompts. Using ChromaDB, the app performs vector searches to find the best matches.
 
 This app uses **chromaDB vectorized database** that can vectorize movies data by:
@@ -7,7 +12,6 @@ This app uses **chromaDB vectorized database** that can vectorize movies data by
 - Genre
 - Release Date
 - Key Words
-
 
 # **Features**
 - Log in/Register/Logout
