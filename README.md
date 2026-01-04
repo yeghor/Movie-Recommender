@@ -1,5 +1,6 @@
 # **Overview of Film Recomendator Django App**
-This is web application written in Django. That allows users to get pretty accurate movie suggestion based on prompt.
+A web application built with Django that provides movie suggestions based on natural language prompts. Using ChromaDB, the app performs vector searches to find the best matches.
+
 This app uses **chromaDB vectorized database** that can vectorize movies data by:
 - Title
 - Overview
@@ -7,21 +8,23 @@ This app uses **chromaDB vectorized database** that can vectorize movies data by
 - Release Date
 - Key Words
 
-And allows to make a query, and by using **chromaDB Embedding models** provide accurate results.
 
 # **Features**
 - Log in/Register/Logout
 - Query to get movie suggestion by a prompt
 - Top searches page
 - Each user has his own search history
-- Simple and nice Bootstrap5 design
+- Simple and slick Bootstrap5 design
+
+> Original movies data stored in `data_uploading/json_data/` directory. Taken from the **TMDв** along with the movies posters.
 
 # **Installation**
+> Python 3.10+ is required.
 
 1. **Clone the repository:**
 ```bash
-git clone https://github.com/yeghor/Film-Recomendator-Django-App.git
-cd Learning-Log-Django
+git clone https://github.com/yeghor/Movie-Recommender.git
+cd Movie-Recommender
 ```
 2. **Create a virtual enviroment:**
 ```bash
@@ -38,17 +41,25 @@ source venv/bin/activate
 pip install -r requirements.txt
 ```
 
-4. **Set up the database:**
+4. **Create and fill chromaDB collections with movies data**
 ```bash
-python manage.py migrate
+cd data_uploading
+python upload_chroma_data.py
+cd ..
 ```
 
-5. **Create a superuser:**
+5. **Set up the database:**
+```bash
+# Note that --run-syncdb flag is required as local apps don't have migrations
+python manage.py migrate --run-syncdb
+```
+
+6. **Create a superuser:**
 ```bash
 python manage.py createsuperuser
 ```
 
-5. **Run the development server:**
+7. **Run the development server:**
 ```bash
 python manage.py runserver
 ```
