@@ -1,4 +1,4 @@
-# **Overview of Film Recomendator Django App**
+# **Movie Recomender Django App**
 
 
 https://github.com/user-attachments/assets/128d3b54-10e6-41ce-863c-cd5a004ccd00
